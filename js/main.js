@@ -21,3 +21,19 @@ function displayMovies(movies, callerfunc){  // create function to display movie
     }
     console.log(context);  // display JSON in console
 }
+
+$(document).ready(function() {  // wait for all DOM elements to load
+    getGenres();  // load genres
+});
+
+function getGenres() {  // function that displays genres of the movies
+    $.getJSON("http://api.themoviedb.org/3/genre/movie/list?api_key=" + api_key, function(json) {  // make the API request
+        console.log(json.genres)  // display the genres in console as 
+        genres = {}
+        for(i = 0; i < json.genres.length; i++){
+            genres[json.genres[i].id] = json.genres[i];
+        }
+        console.log(genres); // display genres in console
+    });
+    getLatest(); // load latest films
+}
