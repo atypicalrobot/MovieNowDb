@@ -37,3 +37,10 @@ function getGenres() {  // function that displays genres of the movies
     });
     getLatest(); // load latest films
 }
+
+function getLatest() {  // handles fetching movies from the now playing API endpoints
+    document.getElementById("mainBody").innerHTML = "<h2> Now Playing </h2>";  // initial html for latest page
+    $.getJSON("http://api.themoviedb.org/3/movie/now_playing?api_key=" + api_key, function(json) {  // make the API request
+        displayMovies(json.results, "latest");  // use display function to display results 
+    });
+}
