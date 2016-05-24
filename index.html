@@ -59,7 +59,25 @@
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
         <script src="js/plugins.js"></script>
 
-        
+          <script id="entry-template" type="text/x-handlebars-template">
+        <div class="container">
+            <div class="row card">            
+              <div class="row entry {{callerfunc}}"> 
+                <div class="col-sm-6 card-content poster_path">  
+                  <h1>{{original_title}}</h1>
+                  <img src="https://image.tmdb.org/t/p/w185/{{poster_path}}" class="img_full_width"/>
+                  <h4>Release Date: {{release_date}}</h4>
+                </div>
+                <div class="col-sm-6 card-content overview">
+                   
+                   <h3>{{genre_names}}</h3>
+                   <hr>
+                   <p>{{overview}}</p> 
+                </div>  
+                
+              </div>
+          </div>
+        </script>
   
    
 
