@@ -57,3 +57,11 @@ function Upcoming(){
         displayMovies(json.results, "upcoming");
     });
 }
+
+function searchMovies() {  // create function to search movies
+    document.getElementById("mainBody").innerHTML = "<h2> Search results </h2>"; // initial html for search results page
+    var search = document.getElementById("search").value;  // store seach query as a variable
+    $.getJSON("https://api.themoviedb.org/3/search/movie?query=" + search + "&api_key=" + api_key, function(json) {  // make the API request
+        displayMovies(json.results, "query");  // use display function to display results
+    });
+}
