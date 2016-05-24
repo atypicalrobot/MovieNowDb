@@ -50,3 +50,10 @@ function Popular(){
         displayMovies(json.results, "popular");
     });
 }
+
+function Upcoming(){
+    document.getElementById("mainBody").innerHTML = "<h2> Upcoming Films</h2>";
+    $.getJSON("http://api.themoviedb.org/3/movie/upcoming?api_key=" + api_key, function(json) {
+        displayMovies(json.results, "upcoming");
+    });
+}
