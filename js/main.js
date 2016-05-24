@@ -44,3 +44,9 @@ function getLatest() {  // handles fetching movies from the now playing API endp
         displayMovies(json.results, "latest");  // use display function to display results 
     });
 }
+function Popular(){
+    document.getElementById("mainBody").innerHTML = "<h2> Popular Films</h2>";
+    $.getJSON("http://api.themoviedb.org/3/movie/popular?api_key=" + api_key, function(json) {
+        displayMovies(json.results, "popular");
+    });
+}
